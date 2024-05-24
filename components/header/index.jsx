@@ -8,13 +8,13 @@ const Header = () => {
         </h1>
         <nav className="flex items-center justify-center">
           <ul className="flex items-center justify-between gap-9 font-semibold text-xl ">
-            <li className="border border-orange-400 p-4 rounded transition-all duration-500 hover:bg-orange-200 ">
+            <li className="border border-orange-400 p-3 rounded transition-all duration-500 hover:bg-orange-200 ">
               <Link href={"/"}>Home</Link>
             </li>
-            <li className="border border-orange-400 p-4 rounded transition-all duration-500 hover:bg-orange-200">
+            <li className="border border-orange-400 p-3 rounded transition-all duration-500 hover:bg-orange-200">
               <Link href={"/movie"}>Movie</Link>
             </li>
-            <li className="border border-orange-400 p-4 rounded transition-all duration-500 hover:bg-orange-200">
+            <li className="border border-orange-400 p-3 rounded transition-all duration-500 hover:bg-orange-200">
               <Link href={"/blog"}>Blog</Link>
             </li>
           </ul>
