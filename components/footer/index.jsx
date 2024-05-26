@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex flex-col flex-wrap gap-4 justify-center items-center bg-blue-950 w-full h-[30vh] ">
+    <footer className="flex flex-col flex-wrap gap-4 justify-center items-center bg-gray-500 w-full h-[30vh] ">
       <h3 className="text-2xl font-semibold text-orange-500">
         free website for movies
       </h3>

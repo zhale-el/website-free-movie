@@ -12,25 +12,36 @@ const Single = async ({ params }) => {
   const data = await getData(params.id);
 
   return (
-    <main className="container mx-auto my-12 flex">
+    <main className="container mx-auto my-12 flex flex-col gap-12">
       <section className="rounded-sm bg-gray-100 p-8 flex justify-between items-start w-[80%] m-auto">
         <div className="flex-1">
           <h1 className="font-bold text-2xl">{data.title}</h1>
-          <p className="pt-6 text-lg font-semibold ">Year: {data.year}</p>
-          <p className="text-lg font-semibold">Country: {data.country}</p>
-          <p className="text-lg font-semibold">IMDB: {data.imdb_rating}</p>
-          <p className="pt-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quidem
-            nihil, excepturi nesciunt reprehenderit sit ut deleniti, quas
-            laboriosam repellat, eum eveniet officiis nobis. Velit aspernatur
-            nostrum similique quos fugit! nihil, excepturi nesciunt
-            reprehenderit sit ut deleniti, quas laboriosam repellat, eum eveniet
-            officiis nobis. Velit aspernatur nostrum similique quos fugit!
+
+          <p className="pt-6 text-lg font-semibold text-gray-800 ">
+            Year: {data.year}
           </p>
+          <p className="pt-4 text-lg font-semibold text-gray-800">
+            Country: {data.country}
+          </p>
+          <p className="pt-4 text-lg font-semibold text-gray-800">
+            IMDB: {data.imdb_rating}
+          </p>
+          <p className="pt-6">{data.plot}</p>
+
+          <div className="flex justify-start items-center gap-3 pt-9 flex-wrap ">
+            {data.genres.map((genre, i) => (
+              <h2
+                key={i}
+                className="bg-zinc-200 rounded-md px-4 py-1 transition-all duration-500 hover:bg-zinc-400 cursor-pointer "
+              >
+                {genre}
+              </h2>
+            ))}
+          </div>
         </div>
         <div>
           <Image
-            className="rounded-3xl flex-3"
+            className="rounded-3xl flex-4"
             width={250}
             height={300}
             alt={data.title}
@@ -38,6 +49,19 @@ const Single = async ({ params }) => {
             priority={true}
           />
         </div>
+      </section>
+      <section className="container mx-auto my-12 flex justify-between items-center">
+        {data.images.map((img, i) => (
+          <Image
+            key={i}
+            className="rounded-xl"
+            width={500}
+            height={300}
+            alt={data.title}
+            src={img}
+            priority={true}
+          />
+        ))}
       </section>
     </main>
   );

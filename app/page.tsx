@@ -18,15 +18,15 @@ export default async function Home() {
     <main>
       <div className="text-center mt-9">
         <h2 className="text-blue-950 text-4xl font-bold">Home page</h2>
-        <div className="flex items-center justify-between flex-wrap cursor-pointer">
+        <div className="flex  items-center justify-between flex-wrap cursor-pointer">
           {data.data.map((item: any) => {
             return (
               <Link
                 href={`/movies/${item.id}`}
                 key={item.id}
-                className="bg-blue-950 w-80 shadow-lg rounded-2xl p-3 m-9 overflow-hidden flex items-center flex-col border-2 border-orange-400 "
+                className="bg-gray-100 w-80 shadow-lg shadow-blue-100 rounded-2xl p-3 m-9 overflow-hidden flex items-center flex-col"
               >
-                <h1 className="text-white text-xl font-bold mb-6">
+                <h1 className="text-blue-950 text-xl font-bold mb-6">
                   {item.title}
                 </h1>
                 <Image
@@ -36,8 +36,7 @@ export default async function Home() {
                   src={item.poster}
                 />
                 <div className="flex items-center flex-col gap-4  mt-3">
-                  <p className="font-semibold text-gray-300">{item.genres}</p>
-                  <p className="text-gray-400">
+                  <p className="text-gray-900">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Esse repellat veritatis magnam omnis rerum quia
                     consequuntur! Vitae impedit eos magnam.
