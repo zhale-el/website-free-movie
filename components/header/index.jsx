@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <header className="w-full h-28 bg-gray-500 ">
       <div className="flex items-center justify-between p-6 text-center container">
-        <h1 className="text-3xl font-semibold text-orange-500">
+        <h1 className="text-4xl font-semibold text-orange-500">
           <Link href={"/"}>free movies 📺</Link>
         </h1>
         <nav className="flex items-center justify-center">

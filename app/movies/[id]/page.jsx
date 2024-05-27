@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import NotFound from "../../not-found";
 const getData = async (id) => {
   const response = await fetch(`https://moviesapi.ir/api/v1/movies/${id}`, {
     cache: "no-store",
@@ -10,6 +10,10 @@ const getData = async (id) => {
 
 const Single = async ({ params }) => {
   const data = await getData(params.id);
+
+  if (!data.id) {
+    return NotFound();
+  }
 
   return (
     <main className="container mx-auto my-12 flex flex-col gap-12">
@@ -50,7 +54,7 @@ const Single = async ({ params }) => {
           />
         </div>
       </section>
-      <section className="container mx-auto my-12 flex justify-between items-center">
+      <section className="container mx-auto my-12 flex justify-between items-center flex-wrap  md:gap-2">
         {data.images.map((img, i) => (
           <Image
             key={i}
