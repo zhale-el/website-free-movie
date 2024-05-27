@@ -16,8 +16,8 @@ const Single = async ({ params }) => {
   }
 
   return (
-    <main className="container mx-auto my-12 flex flex-col gap-12">
-      <section className="rounded-sm bg-gray-100 p-8 flex justify-between items-start w-[80%] m-auto">
+    <div className=" my-6 flex flex-col gap-10">
+      <section className="rounded-lg bg-gray-100 p-6 flex justify-between  w-[95%] mr-9 shadow-xl">
         <div className="flex-1">
           <h1 className="font-bold text-2xl">{data.title}</h1>
 
@@ -54,12 +54,12 @@ const Single = async ({ params }) => {
           />
         </div>
       </section>
-      <section className="container mx-auto my-12 flex justify-between items-center flex-wrap  md:gap-2">
+      <section className=" my-12 flex justify-around items-center flex-wrap">
         {data.images.map((img, i) => (
           <Image
             key={i}
-            className="rounded-xl"
-            width={500}
+            className="rounded-xl my-6 shadow-xl"
+            width={450}
             height={300}
             alt={data.title}
             src={img}
@@ -67,7 +67,7 @@ const Single = async ({ params }) => {
           />
         ))}
       </section>
-    </main>
+    </div>
   );
 };
 
